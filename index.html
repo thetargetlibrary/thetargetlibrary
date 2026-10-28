@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Target Library | Gurugram</title>
+
+        <style>
+        /* 1. BASIC PAGE SETTINGS */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #222;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* 2. COLORS: change these to customize the website */
+        :root {
+            --navy: #101b2d;
+            --gold: #e8c875;
+            --light: #f5f3ee;
+        }
+
+        /* 3. GENERAL LAYOUT */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 4. HEADER AND MENU */
+        header {
+            background-color: var(--navy);
+            color: white;
+            padding: 18px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        nav a {
+            color: white;
+            margin-left: 15px;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* 5. BUTTONS */
+        .button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .button-dark {
+            background-color: var(--navy);
+            color: white;
+        }
+
+        /* 6. HOME / HERO SECTION */
+        .hero {
+            background-color: var(--navy);
+            color: white;
+            padding: 65px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .hero-text, .hero-image {
+            width: 50%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-top: 0;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #dddddd;
+            font-size: 18px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 18px;
+        }
+
+        /* 7. FEATURES */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-card {
+            flex: 1 1 220px;
+            border: 1px solid #dddddd;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .feature-card h3 {
+            color: var(--navy);
+        }
+
+        /* 8. BRANCHES */
+        .branches-section {
+            background-color: var(--light);
+        }
+
+        .branches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .branch-card {
+            flex: 1 1 280px;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .branch-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .branch-info {
+            padding: 20px;
+        }
+
+        .branch-info p {
+            min-height: 65px;
+        }
+
+        /* 9. FACILITIES */
+        .facility-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .facility-item {
+            flex: 1 1 220px;
+            background-color: var(--light);
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        /* 10. MEMBERSHIP PLANS */
+        .membership-section {
+            background-color: var(--navy);
+            color: white;
+        }
+
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .plan-card {
+            flex: 1 1 230px;
+            background-color: white;
+            color: #222;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .plan-card h3 {
+            color: var(--navy);
+        }
+
+        .price {
+            color: #9a7428;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* 11. QUOTES */
+        .quotes {
+            background-color: var(--light);
+        }
+
+        .quote-card {
+            background-color: white;
+            padding: 25px;
+            border-left: 5px solid var(--gold);
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .quote-card p {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* 12. PHOTO GALLERY */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: calc(33.33% - 10px);
+            height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* 13. FAQ */
+        .faq-item {
+            border-bottom: 1px solid #dddddd;
+            padding: 15px 0;
+        }
+
+        .faq-item h3 {
+            color: var(--navy);
+        }
+
+        /* 14. CONTACT */
+        .contact-section {
+            background-color: var(--light);
+        }
+
+        /* 15. FOOTER */
+        footer {
+            background-color: #0b1422;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--gold);
+        }
+
+        /* 16. MOBILE SCREEN SETTINGS */
+        @media (max-width: 700px) {
+            .hero-content {
+                display: block;
+            }
+
+            .hero-text, .hero-image {
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 25px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px 5px 0;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <div class="container header-content">
+            <div class="logo">THE TARGET LIBRARY</div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#facilities">Facilities</a>
+                <a href="#membership">Membership</a>
+                <a href="#branches">Branches</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+   
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Your next big achievement <span>starts here.</span></h1>
+                <p>ALL GREAT LEADERS ARE READERS.</p>
+                <a class="button" href="#branches">Explore Our Branches</a>
+                <a class="button button-dark" href="#membership">Membership Plans</a>
+            </div>
+
+            <div class="hero-image">
+                
+                <img src="566.png">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section>
+        <div class="container">
+            <h2>Why Choose The Target Library?</h2>
+            <p>A comfortable space to help you focus on your goals.</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📚 Focused Study</h3>
+                    <p>A study environment designed to help you concentrate.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🪑 Comfortable Space</h3>
+                    <p>Show your real potential with our ergonomically designed desks.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🎯 Goal-Oriented</h3>
+                    <p>A place for students and aspirants working toward their goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="branches-section" id="branches">
+        <div class="container">
+            <h2>Visit Our Branches</h2>
+            <p>Choose the branch that is most convenient for you.</p>
+
+            <div class="branches">
+                <div class="branch-card">
+                    <img src="56.png">
+                    <div class="branch-info">
+                        <h3>Sector 56 <i>(500 Sq. Yards Library</i>)</h3>
+                        <p>Basement C-120, near Huda Market, Gurugram, Haryana 122011</p>
+<p><a href="tel:+919821114517">+919821114517</a></p>
+
+
+                        <a class="button" href="https://www.google.com/maps/search/?api=1&query=The+Target+Library+Sector+56+Gurugram" target="_blank">View Map</a>
+                        <a class="button button-dark" href="https://www.google.com/maps/dir/?api=1&destination=The+Target+Library+Sector+56+Gurugram" target="_blank">Directions</a>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <img src="sector68.png">
+                    <div class="branch-info">
+
+                        <h3>Sector 68</h3>
+                        <p>Near Pratham MRI Center, opposite SBI Bank, Gurugram, Haryana 122101</p>
+<p><a href="tel:+919599824517">+919599824517</a></p>
+                        <a class="button" href="https://www.google.com/maps/search/?api=1&query=The+Target+Library+Sector+68+Gurugram" target="_blank">View Map</a>
+                        <a class="button button-dark" href="https://www.google.com/maps/dir/?api=1&destination=The+Target+Library+Sector+68+Gurugram" target="_blank">Directions</a>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <img src="img.png">
+                    <div class="branch-info">
+                        <h3>Sector 48</h3>
+                        <p>P-106, 4th floor, Uppal Southend, Opp. Omaxe Mall, Gurugram, Haryana 122018</p>
+<p><a href="tel:+919311824517">+919311824517</a></p>
+                        <a class="button" href="https://www.google.com/maps/search/?api=1&query=The+Target+Library+Omaxe+Mall+Sohna+Road+Gurugram" target="_blank">View Map</a>
+                        <a class="button button-dark" href="https://www.google.com/maps/dir/?api=1&destination=The+Target+Library+Omaxe+Mall+Sohna+Road+Gurugram" target="_blank">Directions</a>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+  
+    <section id="facilities">
+        <div class="container">
+            <h2>Facilities</h2>
+           
+
+            <div class="facility-list">
+                <div class="facility-item">🤫 Quiet Study Area</div>
+                <div class="facility-item">🪑 Ergonomically designed Study Desks and Seating</div>
+                <div class="facility-item">❄️ Air Conditioning</div>
+                <div class="facility-item">📶 Wi-Fi </div>
+                <div class="facility-item">🔌 Individual Charging Points on each desk</div>
+                <div class="facility-item">🕒 24/7 Functioning </div>
+		<div class="facility-item">🚗 Car Parking</div>
+		<div class="facility-item">🚻 Separate Boys & Girls Washroom</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="membership-section" id="membership">
+        <div class="container">
+            <h2>Choose Your Study Plan</h2>
+            <p>Contact us for current fees, available seats, and membership details.</p>
+
+            <div class="plans">
+                <div class="plan-card">
+                    <h3>Per Day </h3>
+                    <p>For students who need a study space for a shorter period.</p>
+                    <div class="price">Ask for pricing</div>
+                   
+                    <a class="button" href="#contact">Enquire Now</a>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Monthly Membership</h3>
+                    <p>For students who want a regular study routine.</p>
+                    <div class="price">Ask for pricing</div>
+      
+                    <a class="button" href="#contact">Enquire Now</a>
+                </div>
+
+                <div class="plan-card">
+                    <h3>3/6 Months Membership</h3>
+                    <p>For students serious towards exam and looking for huge discounts.</p>
+                    <div class="price">Ask for pricing</div>
+                    
+                    <a class="button" href="#contact">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="quotes">
+        <div class="container">
+            <h2>A Little Motivation</h2>
+
+            <div class="quote-card">
+                <p>“Your dreams deserve more than distractions.”</p>
+                <strong>— The Target Library</strong>
+            </div>
+
+            <div class="quote-card">
+                <p>“Work hard in the SILENCE and let the success make NOISE.”</p>
+                <strong>— The Target Library</strong>
+            </div>
+        </div>
+    </section>
+
+
+        <section id="gallery">
+        <div class="container">
+            <h2>A Look Inside</h2>
+           
+            <div class="gallery">
+                <img src="sector56.png" >
+                <img src="sector68.png">
+                <img src="48.png">
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="branches-section" id="reviews">
+        <div class="container">
+            <h2>Student Experiences</h2>
+            <p>Genuine reviews from our students.</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>★★★★★</h3>
+                    <p>“As an exam aspirant searching for an ideal study environment, I recently discovered the Target Library, and I must say that it exceeded my expectations in every aspect. This hidden gem has truly become my go-to sanctuary for focused and productive study sessions.”</p>
+                    <small>AA</small>
+                </div>
+
+                <div class="feature-card">
+                    <h3>★★★★★</h3>
+                    <p>“This library is a great resource for students. It has a clean and comfortable environment, helpful staff, and convenient amenities. I would definitely recommend it to anyone looking for a quiet place to study.”</p>
+                    <small>KA</small>
+                </div>`
+
+                <div class="feature-card">
+                    <h3>★★★★★</h3>
+                    <p>“Ambience is just amazing and peaceful. Library is well maintained and spacious. You'll find a genuine and cooperative staff over there. And if you are a "chai lover" while studying then this place has something to offer to you.kudos to the team. 👏👏✌”</p>
+                    <small>KVS</small>
+                </div>
+            </div>
+
+            <p>
+                <a class="button button-dark" href="https://www.google.com/search?q=The+Target+Library+Gurugram+reviews" target="_blank">Find Reviews on Google</a>
+            </p>
+        </div>
+    </section>
+
+
+    
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Where are your branches?</h3>
+                <p>Sector 56, Sector 68 and Sector 48.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are your opening hours?</h3>
+                <p>The Library is functional 24/7.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are the membership fees?</h3>
+                <p>Contact us for current membership fees and available plans.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What facilities do you provide?</h3>
+                <p>See the Facilities section for the services available at each branch.</p>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Visit The Target Library</h2>
+            <p>Have questions about membership, timings or branches? Contact us.</p>
+
+                        <!-- WhatsApp Enquiry -->
+<a class="button" href="#" onclick="chooseWhatsApp(); return false;">
+    WhatsApp Enquiry
+</a>
+
+<!-- Call Us -->
+<a class="button button-dark" href="#" onclick="chooseCall(); return false;">
+    Call Us
+</a>
+
+            
+            <a class="button button-dark" href="mailto:targetlibraryggm@gmail.com">Email Us</a>
+
+            <p>Gurugram, Haryana</p>
+        </div>
+    </section>
+
+
+  
+    <footer>
+        <div class="container">
+            <h3>THE TARGET LIBRARY</h3>
+            <p>Study. Focus. Achieve.</p>
+            <p>Gurugram, Haryana</p>
+            <p><a href="#home">Back to Top ↑</a></p>
+            <small>© The Target Library. All rights reserved.</small>
+        </div>
+    </footer>
+
+<script>
+
+function chooseWhatsApp() {
+
+    let branch = prompt(
+        "Choose your branch:\n\n" +
+        "1. Sector 56\n" +
+        "2. Sector 48\n" +
+        "3. Sector 68\n\n" +
+        "Enter 1, 2 or 3"
+    );
+
+    let numbers = {
+        "1": "9821114517",
+        "2": "9311824517",
+        "3": "9599824517"
+    };
+
+    if (numbers[branch]) {
+
+        let phone = numbers[branch];
+
+        window.open(
+            "https://wa.me/91" + phone,
+            "_blank"
+        );
+
+    } else if (branch !== null) {
+
+        alert("Please choose a valid branch!");
+
+    }
+
+}
+
+
+function chooseCall() {
+
+    let branch = prompt(
+        "Choose your branch:\n\n" +
+        "1. Sector 56\n" +
+        "2. Sector 48\n" +
+        "3. Sector 68\n\n" +
+        "Enter 1, 2 or 3"
+    );
+
+    let numbers = {
+        "1": "9821114517",
+        "2": "9311824517",
+        "3": "9599824517"
+    };
+
+    if (numbers[branch]) {
+
+        let phone = numbers[branch];
+
+        window.location.href = "tel:+91" + phone;
+
+    } else if (branch !== null) {
+
+        alert("Please choose a valid branch!");
+
+    }
+
+}
+
+</script>
+</body>
+</html>
